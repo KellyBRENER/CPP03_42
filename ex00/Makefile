@@ -6,11 +6,11 @@
 #    By: kbrener- <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/10/28 14:04:45 by kbrener-          #+#    #+#              #
-#    Updated: 2024/10/28 14:09:05 by kbrener-         ###   ########.fr        #
+#    Updated: 2024/10/31 11:11:17 by kbrener-         ###   ########.fr        #
 #                                                                              #
 #******************************************************************************#
 
-NAME = fixed
+NAME = claptrap
 CC = c++
 CFLAGS = -Wall -Wextra -Werror -std=c++98
 OBJ_DIR = obj/

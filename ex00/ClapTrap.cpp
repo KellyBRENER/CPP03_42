@@ -6,7 +6,7 @@
 /*   By: kbrener- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/31 09:52:36 by kbrener-          #+#    #+#             */
-/*   Updated: 2024/10/31 10:34:49 by kbrener-         ###   ########.fr       */
+/*   Updated: 2024/10/31 11:13:58 by kbrener-         ###   ########.fr       */
 /*                                                                            */
 /******************************************************************************/
 
@@ -15,6 +15,7 @@
 /*constructor/destructor*/
 ClapTrap::ClapTrap(void) : _hitPoints(10),
 _attackDammage(10), _energyPoints(10) {
+	_name = "unkown";
 	std::cout<<"ClapTrap default constructor called"<<std::endl;
 }
 
@@ -50,6 +51,10 @@ std::string	ClapTrap::getName(void) const {
 	return _name;
 }
 
+void	ClapTrap::setName(const std::string & name) {
+	_name = name;
+}
+
 unsigned int	ClapTrap::getHitPoints(void) const {
 	return _hitPoints;
 }
@@ -66,33 +71,49 @@ unsigned int	ClapTrap::getAttackDamage(void) const {
 void	ClapTrap::attack(const std::string& target) {
 	if (_hitPoints == 0) {
 		std::cout<<"attack cancelled because "<<_name<<\
-		" is dead, no more hitPoints"<<std::endl;
+		" is destroy, no more hitPoints..."<<std::endl;
 		return;
 	}
 	if (_energyPoints == 0) {
 		std::cout<<_name<<"cannot attack "<<target<<\
-		", no more energy point"<<std::endl;
+		", no more energy point..."<<std::endl;
 		return;
 	}
 	_energyPoints--;
-	std::cout<<"ClapTrap "<<_name<<"attacks "<<target<<\
+	std::cout<<"ClapTrap "<<_name<<" attacks "<<target<<\
 	", causing "<<_attackDammage<<" points of damage!"<<std::endl;
 }
 
 void	ClapTrap::takeDamage(unsigned int amount) {
 	if (_hitPoints == 0) {
-		std::cout<<"ClapTrap "<<_name<<" is already dead"<<std::endl;
+		std::cout<<"ClapTrap "<<_name<<" is already destroy..."<<std::endl;
 		return;
 	}
 	_hitPoints -= amount;
-	std::cout<<"ClapTrap "<<_name<<" take "<<amount<<" damages"<<std::endl;
+	std::cout<<"ClapTrap "<<_name<<" take "<<amount<<" damages!"<<std::endl;
 	if (_hitPoints <= 0) {
 		_hitPoints = 0;
-		std::cout<<"ClapTrap "<<_name<<" is totally destroyed"<<std::endl;
+		std::cout<<"ClapTrap "<<_name<<" is totally destroyed..."<<std::endl;
 		return;
 	}
 	std::cout<<"ClapTrap "<<_name<<" has "<<_hitPoints<<\
-	" hit points left"<<std::endl;
+	" hit points left!"<<std::endl;
 }
 
-void	ClapTrap::beRepaired(unsigned int amount) {}
+void	ClapTrap::beRepaired(unsigned int amount) {
+	if (_hitPoints == 0) {
+		std::cout<<"ClapTrap "<<_name<<\
+		" is already destroy and cannot be repaired..."<<std::endl;
+		return;
+	}
+	if (_energyPoints == 0) {
+		std::cout<<"no more energy points, ClapTrap "<<_name<<\
+		"cannot do anything..."<<std::endl;
+		return;
+	}
+	_hitPoints += amount;
+	_energyPoints--;
+	std::cout<<"ClapTrap "<<_name<<" recovered "<<amount<<\
+	" hit points and has now "<<_hitPoints<<" hit points and "<<\
+	_energyPoints<<" energy points left."<<std::endl;
+}
