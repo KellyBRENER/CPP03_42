@@ -6,11 +6,11 @@
 #    By: kbrener- <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/10/28 14:04:45 by kbrener-          #+#    #+#              #
-#    Updated: 2024/11/04 10:28:34 by kbrener-         ###   ########.fr        #
+#    Updated: 2024/11/04 11:13:48 by kbrener-         ###   ########.fr        #
 #                                                                              #
 #******************************************************************************#
 
-NAME = scavtrap
+NAME = fragtrap
 CC = c++
 CFLAGS = -Wall -Wextra -Werror -std=c++98
 OBJ_DIR = obj/

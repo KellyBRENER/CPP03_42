@@ -6,21 +6,21 @@
 /*   By: kbrener- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/31 09:52:36 by kbrener-          #+#    #+#             */
-/*   Updated: 2024/11/04 10:54:30 by kbrener-         ###   ########.fr       */
+/*   Updated: 2024/11/04 11:05:36 by kbrener-         ###   ########.fr       */
 /*                                                                            */
 /******************************************************************************/
 
 #include "ClapTrap.hpp"
 
 /*constructor/destructor*/
-ClapTrap::ClapTrap(void) : _hitPoints(100),
-_attackDammage(20), _energyPoints(50) {
+ClapTrap::ClapTrap(void) : _hitPoints(10),
+_attackDammage(10), _energyPoints(10) {
 	_name = "unkown";
 	std::cout<<"ClapTrap default constructor called"<<std::endl;
 }
 
-ClapTrap::ClapTrap(const std::string & name) : _name(name), _hitPoints(100),
-_attackDammage(20), _energyPoints(50) {
+ClapTrap::ClapTrap(const std::string & name) : _name(name), _hitPoints(10),
+_attackDammage(10), _energyPoints(10) {
 	std::cout<<"ClapTrap constructor called"<<std::endl;
 }
 

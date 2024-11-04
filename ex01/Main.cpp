@@ -6,7 +6,7 @@
 /*   By: kbrener- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/31 10:51:51 by kbrener-          #+#    #+#             */
-/*   Updated: 2024/11/04 10:57:33 by kbrener-         ###   ########.fr       */
+/*   Updated: 2024/11/04 11:11:59 by kbrener-         ###   ########.fr       */
 /*                                                                            */
 /******************************************************************************/
 
@@ -26,15 +26,15 @@ int	main(void) {
  sur un scavtrap (l'inverse n'est pas possible)**"<<std::endl;
 	trap_4 = trap_3;
 	trap_2.setName("arthur");
-	trap_3.setName("fabrice");
+	trap_3.setName("fabrice_scav");
 	trap_1.attack("a human passing by");
 	trap_3.attack("a human passing by");
 	trap_4.attack("a human passing by");
 	trap_1.attack(trap_2.getName());
 	trap_2.takeDamage(trap_1.getAttackDamage());
 	trap_3.beRepaired(30);
-	trap_1.attack(trap_3.getName());
-	trap_3.takeDamage(trap_1.getAttackDamage());
+	trap_1.attack(trap_4.getName());
+	trap_4.takeDamage(trap_1.getAttackDamage());
 	trap_1.attack("another human passing by");
 	trap_2.guardGate();
 }
