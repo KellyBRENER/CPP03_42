@@ -1,4 +1,4 @@
-/******************************************************************************/
+/* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
 /*   ScavTrap.cpp                                       :+:      :+:    :+:   */
@@ -6,16 +6,19 @@
 /*   By: kbrener- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/04 09:48:51 by kbrener-          #+#    #+#             */
-/*   Updated: 2024/11/04 14:23:42 by kbrener-         ###   ########.fr       */
+/*   Updated: 2024/11/06 11:09:08 by kbrener-         ###   ########.fr       */
 /*                                                                            */
-/******************************************************************************/
+/* ************************************************************************** */
 
 #include "ScavTrap.hpp"
 
 /*CONSTRUCTORS/DESTRUCTOR*/
 
-ScavTrap::ScavTrap() {
+ScavTrap::ScavTrap() : ClapTrap() {
 	std::cout<<"ScavTrap default constructor called"<<std::endl;
+	_hitPoints = 100;
+	_energyPoints = 50;
+	_attackDammage = 20;
 }
 
 ScavTrap::ScavTrap(const std::string& name) : ClapTrap(name) {

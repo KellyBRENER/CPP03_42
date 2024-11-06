@@ -1,4 +1,4 @@
-/******************************************************************************/
+/* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
 /*   ClapTrap.cpp                                       :+:      :+:    :+:   */
@@ -6,9 +6,9 @@
 /*   By: kbrener- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/31 09:52:36 by kbrener-          #+#    #+#             */
-/*   Updated: 2024/11/04 11:05:36 by kbrener-         ###   ########.fr       */
+/*   Updated: 2024/11/06 11:06:52 by kbrener-         ###   ########.fr       */
 /*                                                                            */
-/******************************************************************************/
+/* ************************************************************************** */
 
 #include "ClapTrap.hpp"
 
@@ -25,10 +25,7 @@ _attackDammage(10), _energyPoints(10) {
 }
 
 ClapTrap::ClapTrap(const ClapTrap & src) {
-	_name = src.getName();
-	_hitPoints = src.getHitPoints();
-	_attackDammage = src.getAttackDamage();
-	_energyPoints = src.getEnergyPoints();
+	*this = src;
 	std::cout<<"ClapTrap copy constructor called"<<std::endl;
 }
 
@@ -38,6 +35,8 @@ ClapTrap::~ClapTrap() {
 
 /*operator overload*/
 ClapTrap&	ClapTrap::operator=(const ClapTrap& src) {
+	if (this == &src)
+		return (*this);
 	_name = src.getName();
 	_hitPoints = src.getHitPoints();
 	_attackDammage = src.getAttackDamage();
